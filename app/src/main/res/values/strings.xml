@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="welcome_to_showestore_app">Welcome To ShoweStore App</string>
+    <string name="next">Next</string>
+    <string name="instructions_you_should_follow">Instructions you should follow</string>
+    <string name="_1_navigate_to_next_screen_n2_then_navigate_to_add_shoe_details_n3_save_the_data_you_entered_n4_you_will_see_your_items_that_you_added">1.Navigate to next screen\n2.then navigate to add shoe details\n3.Save the data you entered\n4.you will see your items that you added</string>
+    <string name="add_new_item">Add New Item</string>
+    <string name="shoe_name">Shoe Name</string>
+    <string name="company">Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="description">Description</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="instructions">instructions</string>
+    <string name="shoe_listing">Shoe Listing</string>
+    <string name="shoe_details">Shoe Details</string>
+    <string name="welcome">Welcome</string>
+    <string name="Required">Required</string>
+    <string name="welcome_back_to_your_store_shoe">Welcome back to your store shoe</string>
+    <string name="logout">Logout</string>
+</resources>
