@@ -4,57 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <!--we use this to show data in this item-->
 
         <variable
             name="myShoe"
             type="com.udacity.shoestore.models.Shoe" />
 
+        <!--we imported this class to use the methode within it to convert the size to string and reverse-->
         <import type="com.udacity.utils.converters.DoubleConverter" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="@dimen/_15dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true">
+        <!--we used linear layout because the layout simple and has vertically aligned-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/_15dp"
             android:orientation="vertical">
 
             <TextView
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text='@{@string/shoe_name+" : "+myShoe.name}'
-                style="@style/normalText"
                 tools:text="@string/shoe_name" />
 
 
             <TextView
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_10dp"
                 android:text='@{@string/description+" : "+myShoe.description}'
-                style="@style/normalText"
                 tools:text="@string/description" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_10dp"
                 android:text='@{@string/company+" : "+myShoe.company}'
                 android:textSize="18sp"
                 tools:text="@string/company" />
 
             <TextView
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_10dp"
                 android:text='@{@string/shoe_size+" : "+DoubleConverter.doubleToString(myShoe.size)}'
-                style="@style/normalText"
                 tools:text="@string/shoe_size" />
 
 

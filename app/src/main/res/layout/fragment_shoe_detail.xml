@@ -4,44 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <!--we imported this class to use the methode within it to convert the size to string and reverse-->
         <import type="com.udacity.utils.converters.DoubleConverter" />
 
+        <!--we used the variable to access the shoe instance and use two way binding-->
         <variable
             name="viewModel"
             type="com.udacity.shoestore.viewModel.SharedViewModel" />
     </data>
-
+    <!--we used scrolView so we can scroll if screen size small-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
         tools:context=".ui.showDetails.ShoeDetailFragment">
-
+        <!--we used constrainLayout to align the twwo buttons at bottom-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingHorizontal="20dp">
-
+            android:paddingHorizontal="@dimen/_20dp">
+            <!--Name Label-->
             <TextView
                 android:id="@+id/textView"
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="@dimen/_50dp"
                 android:text="@string/shoe_name"
-                style="@style/normalText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!--Edit Field to enter the name-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtNameLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/_5dp"
+                app:boxBackgroundColor="@color/grey"
                 app:hintEnabled="false"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:boxBackgroundColor="@color/grey"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
 
@@ -54,23 +56,24 @@
                     android:text="@={viewModel.shoe.name}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <!--company Label-->
             <TextView
                 android:id="@+id/txtCompany"
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/_15dp"
                 android:text="@string/company"
-                style="@style/normalText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtNameLayout" />
 
+            <!--Edit Field to enter the company-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtCompanyLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/_5dp"
                 app:boxBackgroundColor="@color/grey"
                 app:hintEnabled="false"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -86,23 +89,24 @@
                     android:text="@={viewModel.shoe.company}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <!--size Label-->
             <TextView
                 android:id="@+id/textShowSize"
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/_15dp"
                 android:text="@string/shoe_size"
-                style="@style/normalText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtCompanyLayout" />
 
+            <!--Edit Field to enter the size-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtShowSizeLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/_5dp"
                 app:boxBackgroundColor="@color/grey"
                 app:hintEnabled="false"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -118,25 +122,26 @@
                     android:text="@={DoubleConverter.doubleToString(viewModel.shoe.size)}" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
+            <!--description Label-->
             <TextView
                 android:id="@+id/textDescription"
+                style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/_15dp"
                 android:text="@string/description"
-                style="@style/normalText"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txtShowSizeLayout" />
 
+            <!--Edit Field to enter description-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                app:hintEnabled="false"
+                android:layout_marginTop="@dimen/_5dp"
                 app:boxBackgroundColor="@color/grey"
+                app:hintEnabled="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textDescription"
                 app:layout_constraintTop_toBottomOf="@+id/textDescription">
@@ -152,12 +157,12 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSave"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="30dp"
-                android:layout_marginEnd="10dp"
-                android:text="@string/save"
                 style="@style/btnStyle"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_30dp"
+                android:layout_marginEnd="@dimen/_10dp"
+                android:text="@string/save"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btnCancel"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -167,11 +172,11 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCancel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="@string/cancel"
                 style="@style/btnStyle"
+                android:layout_width="@dimen/_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10dp"
+                android:text="@string/cancel"
                 app:layout_constraintBottom_toBottomOf="@+id/btnSave"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

@@ -11,6 +11,7 @@ import androidx.navigation.ui.NavigationUI
 import com.google.android.material.card.MaterialCardView
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
+import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.databinding.FragmentShoeListingBinding
 import com.udacity.shoestore.databinding.ShowItemBinding
 import com.udacity.shoestore.models.Shoe
@@ -28,8 +29,8 @@ class ShoeListingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_listing, container, false)
+        binding = FragmentShoeListingBinding.inflate( inflater, container, false)
+
         setHasOptionsMenu(true)
         initUi()
         binding.add.setOnClickListener {

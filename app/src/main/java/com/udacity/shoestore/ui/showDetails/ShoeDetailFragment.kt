@@ -17,50 +17,55 @@ class ShoeDetailFragment : Fragment() {
     private lateinit var binding: FragmentShoeDetailBinding
 
 
-    private val viewModel: SharedViewModel by activityViewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
-        binding.viewModel = viewModel
-        binding.btnSave.setOnClickListener {
-            //validate if data entered
-            if (validateInputs()) {
-                //add item
-                viewModel.addNewItem()
+        binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
+
+        with(binding) {
+
+            viewModel = sharedViewModel
+            btnSave.setOnClickListener {
+                //validate if data entered
+                if (validateInputs()) {
+                    //add item
+                    sharedViewModel.addNewItem()
+                    findNavController().popBackStack()
+                }
+            }
+
+            btnCancel.setOnClickListener {
                 findNavController().popBackStack()
             }
+
         }
-
-        binding.btnCancel.setOnClickListener {
-            findNavController().popBackStack()
-        }
-
-
         return binding.root
     }
 
     fun validateInputs(): Boolean {
-        when {
-            binding.editshoeName.text.isNullOrEmpty() -> {
-                binding.editshoeName.error = getText(R.string.Required)
-                return false
-            }
-            binding.editCompany.text.isNullOrEmpty() -> {
-                binding.editCompany.error = getText(R.string.Required)
-                return false
-            }
-            binding.editDescription.text.isNullOrEmpty() -> {
-                binding.editDescription.error = getText(R.string.Required)
-                return false
-            }
-            binding.editshoeSize.text.isNullOrEmpty() -> {
-                binding.editshoeSize.error = getText(R.string.Required)
-                return false
-            }
-            else -> {
-                return true
+        with(binding) {
+            when {
+                editshoeName.text.isNullOrEmpty() -> {
+                    editshoeName.error = getText(R.string.Required)
+                    return false
+                }
+                editCompany.text.isNullOrEmpty() -> {
+                    editCompany.error = getText(R.string.Required)
+                    return false
+                }
+                editDescription.text.isNullOrEmpty() -> {
+                    editDescription.error = getText(R.string.Required)
+                    return false
+                }
+                editshoeSize.text.isNullOrEmpty() -> {
+                    editshoeSize.error = getText(R.string.Required)
+                    return false
+                }
+                else -> {
+                    return true
+                }
             }
         }
 

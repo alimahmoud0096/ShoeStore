@@ -6,7 +6,7 @@
     <data>
 
     </data>
-
+    <!--we used constrainLayout to align the  button at bottom-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +16,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="@dimen/_50dp"
             android:text="@string/welcome_to_showestore_app"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/_30dp"
             android:text="@string/welcome_back_to_your_store_shoe"
             style="@style/normalText"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,10 +37,10 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNext"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/_0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="@dimen/_20dp"
+            android:layout_marginVertical="@dimen/_20dp"
             android:text="@string/next"
             style="@style/btnStyle"
             app:layout_constraintBottom_toBottomOf="parent"
